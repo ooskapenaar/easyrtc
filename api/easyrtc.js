@@ -4530,6 +4530,9 @@ var Easyrtc = function() {
         }
         if (preallocatedSocketIo && preallocatedSocketIo.socket.connected) {
             connectHandler(null);
+        } 
+        else if( self.webSocket.connected ) {
+            connectHandler(null);
         }
         else {
             addSocketListener("connect", connectHandler);
